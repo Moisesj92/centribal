@@ -15,10 +15,10 @@ class CreateTransacionesTable extends Migration
     {
         Schema::create('transaciones', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unique()->index();
+            $table->integer('user_id')->index();
             $table->string('transaccion')->unique()->index();
             $table->date('fecha_transaccion')->nullable();
-            $table->integer('producto_id');
+            $table->integer('producto_id')->index();
             $table->timestamps();
         });
     }
